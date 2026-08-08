@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PASSPORT — Album ID Generator</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+</head>
+<body>
+
+  <div class="top">
+    <div class="brand">PASSPORT<small>Album ID Generator</small></div>
+    <div class="meta">NO. FORM-07-CF<br>ISSUED BY CARDFORGE</div>
+  </div>
+
+  <div class="layout">
+
+    <div class="stage">
+      <div id="card-shell">
+        <canvas id="idCanvas" width="2340" height="1476"></canvas>
+        <div class="notch"></div>
+      </div>
+      <div class="card-actions">
+        <button class="btn-ghost" id="shuffleBtn">Shuffle Serial</button>
+        <button class="btn-primary" id="downloadBtn">Download ID</button>
+      </div>
+    </div>
+
+    <div class="panel">
+
+      <div class="field-group">
+        <div class="section-title">01 — Cover Art</div>
+        <div class="swatches" id="swatches"></div>
+        <div class="zoom-row">
+          <span class="zoom-label">ZOOM</span>
+          <input type="range" id="coverZoomSlider" min="40" max="250" value="100">
+          <button class="btn-tiny" id="resetCoverBtn" type="button">Reset</button>
+        </div>
+        <div class="zoom-row">
+          <span class="zoom-label">MOVE ↕</span>
+          <input type="range" id="coverPanYSlider" min="-100" max="100" value="0">
+        </div>
+      </div>
+
+      <div class="field-group">
+        <div class="section-title">02 — Your Photo</div>
+        <label class="dropzone" id="dropzone">
+          <div class="dz-icon">◧</div>
+          <div class="dz-text"><b>Upload a photo</b><br>Drag on the card to reposition, use the slider to zoom</div>
+          <input type="file" id="photoInput" accept="image/*">
+        </label>
+        <div class="zoom-row">
+          <span class="zoom-label">ZOOM</span>
+          <input type="range" id="zoomSlider" min="100" max="300" value="100">
+          <button class="btn-tiny" id="resetPhotoBtn" type="button">Reset</button>
+        </div>
+      </div>
+
+      <div class="field-group">
+        <div class="section-title">03 — Details</div>
+        <div class="field-group">
+          <label class="field-label">Full Name <span class="idx">01</span></label>
+          <input type="text" id="fName" placeholder="e.g. Pranay Patkar" maxlength="26">
+        </div>
+        <div class="field-group">
+          <label class="field-label">Date of Birth <span class="idx">02</span></label>
+          <input type="text" id="fDob" placeholder="DD / MM / YYYY" maxlength="10">
+        </div>
+        <div class="field-group">
+          <label class="field-label">Location <span class="idx">03</span></label>
+          <input type="text" id="fLoc" placeholder="e.g. Mumbai, IN" maxlength="24">
+        </div>
+        <div class="field-group">
+          <label class="field-label">Signature <span class="idx">04</span></label>
+          <input type="text" id="fSig" placeholder="Signed as..." maxlength="22">
+        </div>
+      </div>
+
+      <div class="field-group">
+        <div class="section-title">04 — Text Color</div>
+        <div class="text-color-row">
+          <div class="color-swatches" id="colorSwatches"></div>
+          <input type="color" id="customColor" value="#f2efe8" title="Custom color">
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <footer>Fan-made · not affiliated with any label or artist · built for fun</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
